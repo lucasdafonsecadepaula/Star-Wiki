@@ -11,7 +11,6 @@ export default function MainContent() {
   const { searchText, personSearchedArray } = useContext(searchContext);
   const { handlerOpenModalWithData } = useContext(contextModal);
   const { length } = data;
-  
 
   return (
     <Body>
@@ -26,13 +25,12 @@ export default function MainContent() {
           {searchText.length === 0 && (
             <>
               {data[pagination].results.map((person, id) => (
-                <div className="item" key={id}>
-                  <div
-                    className="item-column"
-                    onClick={() => handlerOpenModalWithData(person)}
-                  >
-                    <h4>{person.name}</h4>
-                  </div>
+                <div
+                  className="item"
+                  key={id}
+                  onClick={() => handlerOpenModalWithData(person)}
+                >
+                  <h4>{person.name}</h4>
                 </div>
               ))}
 

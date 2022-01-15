@@ -27,18 +27,13 @@ export const Body = styled.div`
     text-align: center;
   }
   .item {
+    cursor: pointer;
+    padding: 6.5px 12px;
     position: relative;
     width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: space-between;
-
-    .item-column {
-      cursor: pointer;
-      padding: 6.5px 12px;
-      width: 100%;
-      height: 100%;
-    }
   }
   .item:hover {
     background: rgba(0, 0, 0, 0.1);
@@ -48,7 +43,8 @@ export const Body = styled.div`
     height: 430.5px;
   }
   .search-results-title {
-    padding-left: 8px;
+    padding: 4px 8px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   }
   .search-results-failed {
     height: 419.5px;
