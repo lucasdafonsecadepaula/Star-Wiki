@@ -13,6 +13,7 @@ const rotate = keyframes`
 `;
 
 export const Body = styled.div`
+  position: relative;
   background-color: red;
   width: 400px;
   background-color: #ebe9e9;

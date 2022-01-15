@@ -4,6 +4,10 @@ export const Body = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
   .bottom-btn {
     width: 100%;
