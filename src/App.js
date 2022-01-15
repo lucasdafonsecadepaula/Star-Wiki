@@ -2,7 +2,8 @@ import Topbar from "./components/Topbar/Topbar";
 import GlobalStyle from "./styles/global";
 import "./styles/font.css";
 import MainContent from "./components/MainContent/MainContent";
-import MakeRandomStars from "./components/MakeRandomStars/MakeRandomStars"
+import MakeRandomStars from "./components/MakeRandomStars/MakeRandomStars";
+import CustomModal from "./components/CustomModal/CustomModal";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Topbar />
       <MainContent />
       <MakeRandomStars />
+      <CustomModal />
     </>
   );
 }

@@ -1,45 +1,81 @@
 import React, { useContext } from "react";
 import { dataContext } from "../../context/DataProvider";
-import { Body, Footer } from "./style";
+import { contextModal } from "../../context/ModalProvider";
+import { searchContext } from "../../context/SearchProvider";
+import BottomButtons from "../BottomButtons/BottomButtons";
+import SearchBox from "../SearchBox/SearchBox";
+import { Body } from "./style";
 
 export default function MainContent() {
-  const { data, pagination, changePage} = useContext(dataContext);
+  const { data, pagination, loading } = useContext(dataContext);
+  const { searchText, personSearchedArray } = useContext(searchContext);
+  const { handlerOpenModalWithData } = useContext(contextModal);
   const { length } = data;
   
+
   return (
     <Body>
       <div className="title">
         <h2>Personagens</h2>
       </div>
 
-      {length >= pagination ? (
+      {length >= pagination && (
         <>
-          {data[pagination].results.map((person, id) => (
-            <div className="item" key={id}>
-              <h4>{person.name}</h4>
-            </div>
-          ))}
+          <SearchBox />
 
-          <Footer className="bottom" pagination={pagination}>
-            <div className="bottom-btn">
-              <button className="bottom-btn-left" onClick={() => changePage(-1)}>
-                {"<"}
-              </button>
-            </div>
-            <p className="bottom-text">{pagination}/9</p>
-            <div className="bottom-btn">
-              <button className="bottom-btn-right" onClick={() => changePage(1)}>
-                {">"}
-              </button>
-            </div>
-          </Footer>
+          {searchText.length === 0 && (
+            <>
+              {data[pagination].results.map((person, id) => (
+                <div className="item" key={id}>
+                  <div
+                    className="item-column"
+                    onClick={() => handlerOpenModalWithData(person)}
+                  >
+                    <h4>{person.name}</h4>
+                  </div>
+                </div>
+              ))}
+
+              <BottomButtons />
+            </>
+          )}
+
+          {searchText.length !== 0 && (
+            <>
+              {!loading && (
+                <div className="search-results">
+                  <h3 className="search-results-title">
+                    Resultados para {`"${searchText}"`}:
+                  </h3>
+                  {personSearchedArray.map((person, id) => (
+                    <div
+                      className="item"
+                      key={id}
+                      onClick={() => handlerOpenModalWithData(person)}
+                    >
+                      <h4>{person.name}</h4>
+                    </div>
+                  ))}
+                  {personSearchedArray.length === 0 && (
+                    <div className="search-results-failed">
+                      <div className="item">
+                        <h4>Nenhum Resultado Encontrado</h4>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </>
+          )}
         </>
-      ) : (
+      )}
+
+      {loading && (
         <>
           <div className="loading">
             <img
               className="img"
-              src={"./lightsaber.png"}
+              src={"./lightsaber-32x32.png"}
               height={25}
               width={25}
               alt=""
