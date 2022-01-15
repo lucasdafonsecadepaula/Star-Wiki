@@ -71,4 +71,7 @@ export const Body = styled.div`
   @media screen and (max-width: 414px) {
     width: 300px;
   }
+  @media screen and (max-height: 720px) {
+    margin: 100px 0;
+  }
 `;
