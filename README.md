@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  <img alt="Make-up Logo" src="https://github.com/lucasdafonsecadepaula/Unid-Desafio/blob/main/github-img/logo.png" />
+  <img alt="Make-up Logo" src="https://github.com/lucasdafonsecadepaula/Star-Wiki/blob/main/public/favicon-32x32.png" />
   <br>
   <br>
   Star Wiki - Smart NX Challenger
