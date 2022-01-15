@@ -8,7 +8,6 @@ Modal.setAppElement("#root");
 export default function CustomModal() {
   const { modalIsOpen, setModalIsOpen, modalData } = useContext(contextModal);
 
-
   return (
     <Modal
       className="modal-content"

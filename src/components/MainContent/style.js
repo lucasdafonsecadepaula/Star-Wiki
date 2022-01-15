@@ -16,7 +16,6 @@ export const Body = styled.div`
   background-color: red;
   width: 400px;
   background-color: #ebe9e9;
-  font-family: "Jedi2";
   border-radius: 8px;
   box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.6);
   min-height: 558.5px;

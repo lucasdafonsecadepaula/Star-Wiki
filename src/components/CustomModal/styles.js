@@ -28,7 +28,7 @@ export const Body = styled.div`
     line-height: 5px;
   }
 
-  .item{
-      padding: 10px 0;
+  .item {
+    padding: 10px 0;
   }
 `;
