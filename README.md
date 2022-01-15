@@ -6,7 +6,7 @@
   Star Wiki - Smart NX Challenger
   <br>
   <br>
-  <a href="https://smart-nx-desafio.vercel.app/">https://smart-nx-desafio.vercel.app/</a>
+  <a target="_blank" href="https://smart-nx-desafio.vercel.app/">https://smart-nx-desafio.vercel.app/</a>
 </h1>
 
 ---
