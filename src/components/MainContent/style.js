@@ -67,7 +67,7 @@ export const Body = styled.div`
     animation: ${rotate} 2s linear infinite;
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 414px) {
     width: 300px;
   }
 `;

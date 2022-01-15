@@ -63,6 +63,14 @@ export const Body = styled.div`
     animation: ${move} 5s infinite ease-in-out, ${blink} 1s infinite ease-in-out;
   }
 
+  @media screen and (max-width: 414px) {
+    .dot {
+      offset-path: path(
+        "m 0 -4.9 l 0 -39.2 c 0 -4.9 0 -4.9 15.1 -4.9 l 271.8 0 c 15.1 0 15.1 0 15.1 4.9 l 0 39.2 c 0 4.9 0 4.9 -15.1 4.9 l -271.8 0 c -15.1 0 -15.1 0 -15.1 -4.9"
+      );
+    }
+  }
+
   .divider {
     border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   }
