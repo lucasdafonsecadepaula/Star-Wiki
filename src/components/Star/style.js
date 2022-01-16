@@ -33,5 +33,5 @@ export const Body = styled.div`
   background: #ffff;
   animation: ${moveLeftAndRight} 2s infinite linear,
     ${blink} 1s infinite ease-in-out;
-  animation-delay: ${({ value }) => `${value.yPosition + value.xPosition}ms`};
+  animation-delay: ${() => `${Math.floor(Math.random() * 1000)}ms`};
 `;

@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Body = styled.div`
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,5 +29,9 @@ export const Body = styled.div`
 
   .item {
     padding: 10px 0;
+  }
+
+  @media screen and (max-width: 414px) {
+    padding: 25px;
   }
 `;

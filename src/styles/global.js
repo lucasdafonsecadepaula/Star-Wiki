@@ -35,8 +35,6 @@ body {
     box-shadow: 2px 5px rgba(0,0,0, 0.3);
     border: 1px solid;
     border-radius: 10px;
-    width: auto;
-    height: auto;
     background: #ebe9e9;
     outline: none;
 }
