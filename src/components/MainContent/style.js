@@ -28,16 +28,24 @@ export const Body = styled.div`
   }
   .item {
     cursor: pointer;
-    padding: 6.5px 12px;
     position: relative;
-    width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     display: flex;
-    justify-content: space-between;
+    align-items: center;
   }
   .item:hover {
     background: rgba(0, 0, 0, 0.1);
   }
+  .column-item{
+    padding: 6.5px 12px;
+    width: 100%;
+  }
+  .heart-icon{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
 
   .search-results {
     height: 430.5px;

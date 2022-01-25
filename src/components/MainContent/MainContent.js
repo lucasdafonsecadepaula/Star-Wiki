@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { dataContext } from "../../context/DataProvider";
+import { favoriteContext } from "../../context/FavoriteProvider";
 import { contextModal } from "../../context/ModalProvider";
 import { searchContext } from "../../context/SearchProvider";
 import BottomButtons from "../BottomButtons/BottomButtons";
+import Heart from "../Heart/Heart";
 import SearchBox from "../SearchBox/SearchBox";
 import { Body } from "./style";
 
@@ -10,6 +12,7 @@ export default function MainContent() {
   const { data, pagination, loading } = useContext(dataContext);
   const { searchText, personSearchedArray } = useContext(searchContext);
   const { handlerOpenModalWithData } = useContext(contextModal);
+  const {addOrRemoveFavorite} = useContext(favoriteContext)
   const { length } = data;
 
   return (
@@ -25,12 +28,13 @@ export default function MainContent() {
           {searchText.length === 0 && (
             <>
               {data[pagination].results.map((person, id) => (
-                <div
-                  className="item"
-                  key={id}
-                  onClick={() => handlerOpenModalWithData(person)}
-                >
-                  <h4>{person.name}</h4>
+                <div key={id} className="item">
+                  <div className="column-item" onClick={() => handlerOpenModalWithData(person)}>
+                    <h4>{person.name}</h4>
+                  </div>
+                  <div className="heart-icon"  onClick={() =>  addOrRemoveFavorite(person)}>
+                    <Heart person={person.name} />
+                  </div>
                 </div>
               ))}
 
